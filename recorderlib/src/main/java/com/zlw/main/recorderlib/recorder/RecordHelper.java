@@ -253,7 +253,7 @@ public class RecordHelper {
             bufferSize = AudioRecord.getMinBufferSize(currentConfig.getSampleRate(),
                     currentConfig.getChannelConfig(), currentConfig.getEncodingConfig()) * RECORD_AUDIO_BUFFER_TIMES;
             Logger.d(TAG, "record buffer size = %s", bufferSize);
-            audioRecord = new AudioRecord(MediaRecorder.AudioSource.VOICE_CALL, currentConfig.getSampleRate(),
+            audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, currentConfig.getSampleRate(),
                     currentConfig.getChannelConfig(), currentConfig.getEncodingConfig(), bufferSize);
             if (currentConfig.getFormat() == RecordConfig.RecordFormat.MP3) {
                 if (mp3EncodeThread == null) {
